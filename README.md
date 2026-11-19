@@ -56,7 +56,8 @@ AGENTS.md 会随每轮会话注入，等价于把「该并发时并发」变成�
 .
 ├── SKILL.md              # 主编排规程（放 skill 根即可用）
 ├── docs/
-│   └── workflow.md       # 三层自动化工作流：会话层 / 事件层 / 时间层
+│   ├── workflow.md       # 三层自动化工作流：会话层 / 事件层 / 时间层
+│   └── credential-hygiene.md  # 凭据卫生：为什么 agent 不能读凭据文件
 ├── examples/
 │   └── briefs.md         # 可直接复制的侦察片 / 实现片 brief
 ├── scripts/
@@ -105,6 +106,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\who-locks.ps1 -Pat
 | Lead 空等 wait_agent | 浪费并发收益 | 自己那份活先干完 |
 | 采信「我做完了」 | 验收失效 | 只认 Test-Path / 退出码 |
 | 收口阶段继续分派 | 并行已无收益，只增噪声 | Lead 一把改完 |
+
+## 相关文档
+
+- [三层自动化工作流](docs/workflow.md)
+- [凭据卫生](docs/credential-hygiene.md)
+- [brief 模板](examples/briefs.md)
 
 ## 许可
 
